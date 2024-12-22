@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: Century Gothic;
+		}
+		ul{
+			float: right;
+			list-style-type: none;
+			margin-top: 25px;
+		}
+		ul li{
+			display: inline-block;
+		}
+		ul li a{
+			text-decoration: none;
+			color: #fff;
+			padding: 5px 20px;
+			border: 1px solid #fff;
+			transition: 0.6s ease;
+		}
+		ul li a:hover{
+			background-color: #fff;
+			color: #000;
+		}
+		ul li.active a{
+			background-color: #fff;
+			color: #000;
+		}
+		.title{
+			position: absolute;
+			top: 5%;
+			left: 50%;
+			transform: translate(-50%,-50%);	
+		}
+		.title h1{
+			color: #fff;
+			font-size: 50px;
+		}
+		body{
+			background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(plane.jpg);
+			height: 100vh;
+			background-size: cover;
+			background-position: center;
+		}
+		.form-container {
+			position:absolute;
+			align-items: center;
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1500px;
+            margin:100px;
+			margin-left: 250px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container div {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+			color: #fff;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            grid-column: span 4;
+            padding: 20px 20px;
+            border: none;
+            border-radius: 5px;
+			color:#000;
+            font-size: 16px;
+            cursor: pointer;
+        }
+		input[type=submit]:hover{
+			background-color: #fff;
+	        color:#000;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+			<ul>
+				<li class="active"><a href="#">Add Flights</a></li>
+				<li><a href='airlinescode.php'>Airlines ID(Reference)</a></li>
+				<li><a href='homepage.html'>Home</a></li>
+			</ul>
+	</div>
+	<div class="title">
+		<h1>Flight Details</h1>
+	</div>
+	<form action="postadmindetails.php" method="post" class="form-container">
+		<div>
+			<label for="flightcode">Flight Code</label>
+			<input type="text" placeholder="Flight Code" name="flightcode" required>
+		</div>
+		<div>
+			<label for="airlinesid">Airlines ID</label>
+			<input type="text" placeholder="Airlines ID" name="airlinesid" required>
+		</div>
+		<div>
+			<label for="country">Country</label>
+			<input type="text" placeholder="Country" name="country" required>
+		</div>
+		<div>
+			<label for="state">State</label>
+			<input type="text" placeholder="State" name="state" required>
+		</div>
+		<div>
+			<label for="airportname">Airport Name</label>
+			<input type="text" placeholder="Airport Name" name="airportname" required>
+		</div>
+		<div>
+			<label for="source">Source</label>
+			<input type="text" placeholder="Source" name="source" required>
+		</div>
+		<div>
+			<label for="destination">Destination</label>
+			<input type="text" placeholder="Destination" name="destination" required>
+		</div>
+		<div>
+			<label for="departure">Departure</label>
+			<input type="text" placeholder="Departure" name="departure" required>
+		</div>
+		<div>
+			<label for="arrival">Arrival</label>
+			<input type="text" placeholder="Arrival" name="arrival" required>
+		</div>
+		<div>
+			<label for="duration">Duration</label>
+			<input type="text" placeholder="Duration" name="duration" required>
+		</div>
+		<div>
+			<label for="date">Date</label>
+			<input type="date" name="date" required>
+		</div>
+		<div>
+			<label for="economyclass">Economy Class Price</label>
+			<input type="number" placeholder="Economy" name="economyclass" required>
+		</div>
+		<div>
+			<label for="businessclass">Business Class Price</label>
+			<input type="number" placeholder="Business" name="businessclass" required>
+		</div>
+		<div>
+			<input type="submit" value="Submit" name="submit">
+		</div>
+	</form>
+</body>
+</html>
